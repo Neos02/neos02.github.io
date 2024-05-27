@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu%20Mono:700|Inter:400");
 
+:root {
+  --transition: 0.1s ease-out;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --text: #091015;
@@ -48,4 +52,25 @@ h5 {
   border-radius: 0.5rem;
   background-color: var(--primary);
   color: var(--background);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  --height: 0.125rem;
+
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--height));
+  left: 0;
+  width: 0;
+  height: var(--height);
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }

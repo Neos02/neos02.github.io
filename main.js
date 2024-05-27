@@ -1,26 +1,4 @@
-document.getElementById("name").onmouseover = (event) => {
-  const ITERATIONS_PER_LETTER = 2;
-  let iterations = 0;
-
-  const interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
-      .split("")
-      .map((_, index) => {
-        if (index < iterations) {
-          return event.target.dataset.text[index];
-        }
-
-        return randomLetter();
-      })
-      .join("");
-
-    iterations += 1 / ITERATIONS_PER_LETTER;
-
-    if (iterations > event.target.dataset.text.length) {
-      clearInterval(interval);
-    }
-  }, 30);
-};
+hackerText(document.getElementById("name"));
 
 /**
  * Generates a random integer between the minimum (inclusive) and maximum (exclusive) values
@@ -47,4 +25,32 @@ function randomLetter() {
   }
 
   return String.fromCharCode(charCode);
+}
+
+/**
+ * Performs a text scramble effect on the innerText of an element
+ * @param {HTMLElement} element The element to perform the effect on
+ * @param {Number} iterationsPerLetter the number of scrambles per letter before moving onto the next
+ */
+function hackerText(element, iterationsPerLetter = 2) {
+  let iterations = 0;
+
+  const interval = setInterval(() => {
+    element.innerText = element.innerText
+      .split("")
+      .map((_, index) => {
+        if (index < iterations) {
+          return element.dataset.text[index];
+        }
+
+        return randomLetter();
+      })
+      .join("");
+
+    iterations += 1 / iterationsPerLetter;
+
+    if (iterations > element.dataset.text.length) {
+      clearInterval(interval);
+    }
+  }, 30);
 }
