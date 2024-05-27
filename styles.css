@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu%20Mono:700|Inter:400");
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #091015;
+    --background: #dce7ef;
+    --primary: #304c69;
+    --secondary: #ad8cca;
+    --accent: #9a4da8;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #eaf1f6;
+    --background: #101b23;
+    --primary: #96b2cf;
+    --secondary: #563573;
+    --accent: #a457b2;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4.21rem;
+}
+
+h2 {
+  font-size: 3.158rem;
+}
+
+h3 {
+  font-size: 2.369rem;
+}
+
+h4 {
+  font-size: 1.777rem;
+}
+
+h5 {
+  font-size: 1.333rem;
+}
+
+small {
+  font-size: 0.75rem;
+}

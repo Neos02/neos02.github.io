@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <title>portfolio</title>
-      <link rel="stylesheet" type="text/css" href="styles.css">
-      <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    </head>
-    <body>
-
-      <script type="text/javascript" src="main.js"></script>
-    </body>
-  </html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              text: "var(--text)",
+              background: "var(--background)",
+              primary: "var(--primary)",
+              secondary: "var(--secondary)",
+              accent: "var(--accent)",
+            },
+            fontSize: {
+              sm: "0.750rem",
+              base: "1rem",
+              xl: "1.333rem",
+              "2xl": "1.777rem",
+              "3xl": "2.369rem",
+              "4xl": "3.158rem",
+              "5xl": "4.210rem",
+            },
+            fontFamily: {
+              heading: "Ubuntu Mono",
+              body: "Inter",
+            },
+            fontWeight: {
+              normal: "400",
+              bold: "700",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <nav></nav>
+  </body>
+</html>
