@@ -40,26 +40,12 @@ h5 {
   font-weight: 700;
 }
 
-h1 {
-  font-size: 4.21rem;
-}
-
-h2 {
-  font-size: 3.158rem;
-}
-
-h3 {
-  font-size: 2.369rem;
-}
-
-h4 {
-  font-size: 1.777rem;
-}
-
-h5 {
-  font-size: 1.333rem;
-}
-
-small {
-  font-size: 0.75rem;
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: var(--background);
 }
