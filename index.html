@@ -19,10 +19,25 @@
         </h3>
       </a>
 
+      <input type="checkbox" id="menu-toggle" hidden />
+
+      <label id="menu-btn" for="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <label id="menu-overlay" for="menu-toggle"></label>
+
       <div class="links-container">
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#projects">Projects</a>
-        <a class="btn-primary falling-particles" href="#contact">Contact</a>
+        <a
+          id="contact-btn"
+          class="btn-primary particle-btn nav-link"
+          href="#contact"
+          >Contact</a
+        >
       </div>
     </nav>
 

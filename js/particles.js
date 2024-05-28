@@ -116,4 +116,4 @@ function createParticleEventListeners(className) {
   }
 }
 
-createParticleEventListeners("falling-particles");
+createParticleEventListeners("particle-btn");

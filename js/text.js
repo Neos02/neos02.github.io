@@ -1,3 +1,6 @@
+const SHORT_NAME = "Nick Kennedy";
+const DEFAULT_NAME = "Nicholas Kennedy";
+
 /**
  * Performs a text scramble effect on the innerText of an element
  * @param {HTMLElement} element The element to perform the effect on
@@ -26,4 +29,26 @@ function hackerText(element, iterationsPerLetter = 2) {
   }, 30);
 }
 
+/**
+ * Shortens the name if the media query is matched,
+ * otherwise sets it to default
+ * @param {MediaQueryList} media the media query to check
+ */
+function shortenName(media) {
+  const name = document.getElementById("name");
+
+  if (media.matches) {
+    name.dataset.text = SHORT_NAME;
+    name.innerText = SHORT_NAME;
+  } else {
+    name.dataset.text = DEFAULT_NAME;
+    name.innerText = DEFAULT_NAME;
+  }
+}
+
+const media448 = window.matchMedia("(max-width: 448px)");
+
+media448.onchange = shortenName;
+
+shortenName(media448);
 hackerText(document.getElementById("name"));
