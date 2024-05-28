@@ -85,21 +85,6 @@ function particlePhysics(element, particle, deltaTime) {
 }
 
 /**
- * Gets the cursor position relative to the event target, ignoring scaling due to styling
- * @param {Event} event the event triggered
- * @returns a map of the x and y values containing the cursor position
- */
-function getCursorPositionRelativeToElement(event) {
-  const rect = event.target.getBoundingClientRect();
-  const scale = rect.width / event.target.offsetWidth;
-
-  return {
-    x: (event.clientX - rect.left) / scale,
-    y: (event.clientY - rect.top) / scale,
-  };
-}
-
-/**
  * Creates event listeners on all objects with the provided
  * class name to create a falling particle effect
  * @param {String} className the classname to add the event listeners to

@@ -8,6 +8,12 @@ function randInt(min, max) {
   return Math.floor(rand(min, max));
 }
 
+/**
+ * Generates a random float between the minimum (inclusive) and maximum (exclusive) values
+ * @param {Number} min the minimum number to generate (inclusive)
+ * @param {Number} max the maximum number to generate (exclusive)
+ * @returns a random float between the min and the max
+ */
 function rand(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -30,31 +36,16 @@ function randomLetter() {
 }
 
 /**
- * Performs a text scramble effect on the innerText of an element
- * @param {HTMLElement} element The element to perform the effect on
- * @param {Number} iterationsPerLetter the number of scrambles per letter before moving onto the next
+ * Gets the cursor position relative to the event target, ignoring scaling due to styling
+ * @param {Event} event the event triggered
+ * @returns a map of the x and y values containing the cursor position
  */
-function hackerText(element, iterationsPerLetter = 2) {
-  let iterations = 0;
+function getCursorPositionRelativeToElement(event) {
+  const rect = event.target.getBoundingClientRect();
+  const scale = rect.width / event.target.offsetWidth;
 
-  const interval = setInterval(() => {
-    element.innerText = element.innerText
-      .split("")
-      .map((_, index) => {
-        if (index < iterations) {
-          return element.dataset.text[index];
-        }
-
-        return randomLetter();
-      })
-      .join("");
-
-    iterations += 1 / iterationsPerLetter;
-
-    if (iterations > element.dataset.text.length) {
-      clearInterval(interval);
-    }
-  }, 30);
+  return {
+    x: (event.clientX - rect.left) / scale,
+    y: (event.clientY - rect.top) / scale,
+  };
 }
-
-hackerText(document.getElementById("name"));
