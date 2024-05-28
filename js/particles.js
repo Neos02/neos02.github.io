@@ -1,7 +1,7 @@
 const PARTICLES_PER_SECOND = 80;
 const PARTICLE_SPAWN_RATE = 1000 / PARTICLES_PER_SECOND;
 const PARTICLE_GRAVITY = 0.00015;
-const PARTICLE_CLASS = "click-particle";
+const PARTICLE_CLASS = "particle";
 
 let spawnTimer = 0;
 let prevParticleTime = 0;
@@ -116,4 +116,4 @@ function createParticleEventListeners(className) {
   }
 }
 
-createParticleEventListeners("click-me");
+createParticleEventListeners("falling-particles");
