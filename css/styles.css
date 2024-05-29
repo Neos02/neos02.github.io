@@ -2,6 +2,13 @@
 
 :root {
   --transition: 0.1s ease-out;
+  --page-padding: 1rem 4rem;
+}
+
+@media only screen and (max-width: 992px) {
+  :root {
+    --page-padding: 1rem 2rem;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -35,17 +42,10 @@ html {
 }
 
 body {
-  padding: 1rem 4rem;
   background-color: var(--background);
   color: var(--text);
   font-family: "Inter", sans-serif;
   font-weight: 400;
-}
-
-@media only screen and (max-width: 992px) {
-  body {
-    padding: 1rem 2rem;
-  }
 }
 
 h1,
@@ -80,6 +80,13 @@ h5 {
 a {
   color: var(--text);
   text-decoration: none;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--page-padding);
 }
 
 /**************** Buttons ****************/
@@ -123,9 +130,13 @@ a {
 /**************** Navbar ****************/
 
 nav {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
+  padding: var(--page-padding);
+  z-index: 1;
 }
 
 .links-container {
@@ -283,5 +294,85 @@ nav {
 
   #menu-toggle:checked ~ #menu-overlay {
     display: block;
+  }
+}
+
+/**************** Hero Section ****************/
+
+#hero-glow {
+  --size: 60vmin;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  filter: blur(calc(var(--size) / 2));
+}
+
+#hero-typewriter {
+  --animation-speed: 3s;
+  --font-size: 4.21rem;
+  --num-words: 3;
+  --max-word-length: 12;
+  --cursor-blink-speed: 0.4s;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: var(--font-size);
+  overflow: hidden;
+}
+
+#hero-typewriter span {
+  position: relative;
+  top: 0;
+  display: block;
+  width: 0;
+  border-right: 0.25rem solid var(--text);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
+  white-space: nowrap;
+  overflow: hidden;
+  animation: swap calc(2 * var(--num-words) * var(--animation-speed))
+      steps(var(--num-words)) infinite,
+    typing var(--animation-speed) steps(var(--max-word-length)) infinite
+      alternate,
+    cursor var(--cursor-blink-speed) step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  0% {
+    display: none;
+    width: 0;
+    padding-right: 0;
+  }
+
+  1% {
+    display: block;
+    padding-right: 0.25rem;
+  }
+
+  40% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes swap {
+  100% {
+    top: calc(-1 * var(--num-words) * var(--font-size));
   }
 }
