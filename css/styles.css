@@ -173,8 +173,8 @@ nav {
 @media only screen and (max-width: 768px) {
   .links-container {
     position: fixed;
-    top: 1rem;
-    right: 100%;
+    top: 0.5rem;
+    right: 1rem;
     flex-direction: column;
     gap: 0;
     width: 80%;
@@ -188,7 +188,6 @@ nav {
   }
 
   #menu-toggle:checked ~ .links-container {
-    right: 1rem;
     opacity: 1;
   }
 
@@ -259,10 +258,6 @@ nav {
 
   #menu-btn span:nth-child(3) {
     top: 80%;
-  }
-
-  #menu-toggle:checked ~ #menu-btn {
-    transform: translateY(1rem);
   }
 
   #menu-toggle:checked ~ #menu-btn span {
