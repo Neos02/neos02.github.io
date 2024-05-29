@@ -315,7 +315,7 @@ nav {
 
 #hero-typewriter {
   --animation-speed: 3s;
-  --font-size: 4.21rem;
+  --font-size: 8rem;
   --num-words: 3;
   --max-word-length: 12;
   --cursor-blink-speed: 0.4s;
@@ -324,8 +324,31 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--font-size);
   height: var(--font-size);
   overflow: hidden;
+}
+
+@media only screen and (max-width: 992px) {
+  #hero-typewriter {
+    --font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #hero-typewriter {
+    --font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #hero-typewriter {
+    --font-size: 3rem;
+  }
 }
 
 #hero-typewriter span {
@@ -333,8 +356,10 @@ nav {
   top: 0;
   display: block;
   width: 0;
+  min-height: var(--font-size);
   border-right: 0.25rem solid var(--text);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
+  font-size: var(--font-size);
   white-space: nowrap;
   overflow: hidden;
   animation: swap calc(2 * var(--num-words) * var(--animation-speed))
@@ -373,6 +398,6 @@ nav {
 
 @keyframes swap {
   100% {
-    top: calc(-1 * var(--num-words) * var(--font-size));
+    top: calc(-2 * var(--num-words) * var(--font-size));
   }
 }
