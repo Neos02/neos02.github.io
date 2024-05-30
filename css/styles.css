@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu%20Mono:700|Inter:400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu%20Mono:700|Inter:400|Inter:700&display=swap");
 
 :root {
-  --transition: 0.1s ease-out;
+  --transition-fast: 0.1s ease-out;
+  --transition-slow: 0.25s ease-out;
   --page-padding: 1rem 4rem;
 }
 
@@ -13,21 +14,21 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --text: #091015;
-    --background: #dce7ef;
-    --primary: #304c69;
-    --secondary: #ad8cca;
-    --accent: #9a4da8;
+    --text: 9, 16, 21;
+    --background: 220, 231, 239;
+    --primary: 48, 76, 105;
+    --secondary: 173, 140, 202;
+    --accent: 154, 77, 168;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #eaf1f6;
-    --background: #101b23;
-    --primary: #96b2cf;
-    --secondary: #563573;
-    --accent: #a457b2;
+    --text: 234, 241, 246;
+    --background: 16, 27, 35;
+    --primary: 150, 178, 207;
+    --secondary: 86, 53, 115;
+    --accent: 164, 87, 178;
   }
 }
 
@@ -39,11 +40,12 @@
 
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text);
+  background-color: rgb(var(--background));
+  color: rgb(var(--text));
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
@@ -77,15 +79,20 @@ h5 {
   font-size: 1.333rem;
 }
 
+p {
+  line-height: 2rem;
+}
+
 a {
-  color: var(--text);
+  color: rgb(var(--text));
   text-decoration: none;
 }
 
 section {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
   padding: var(--page-padding);
 }
 
@@ -97,16 +104,16 @@ section {
   align-items: center;
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
-  background-color: var(--primary);
-  color: var(--background);
-  transition: var(--transition);
+  background-color: rgb(var(--primary));
+  color: rgb(var(--background));
+  transition: var(--transition-fast);
 }
 
 .btn-primary:hover {
   transform: scale(1.1);
-  color: var(--text);
-  background: var(--accent);
-  box-shadow: 0 0 16px var(--accent);
+  color: rgb(var(--text));
+  background: rgb(var(--accent));
+  box-shadow: 0 0 16px rgb(var(--accent));
 }
 
 /**************** Particle Effect ****************/
@@ -123,7 +130,7 @@ section {
   height: 0.25rem;
   filter: blur(1px);
   border-radius: 50%;
-  background-color: var(--text);
+  background-color: rgb(var(--text));
   pointer-events: none;
 }
 
@@ -136,7 +143,13 @@ nav {
   align-items: center;
   width: 100vw;
   padding: var(--page-padding);
+  background-color: transparent;
   z-index: 1;
+  transition: var(--transition-slow);
+}
+
+nav.scrolled {
+  background-color: rgba(var(--background));
 }
 
 .links-container {
@@ -162,15 +175,15 @@ nav {
   left: 0;
   width: 0;
   height: var(--height);
-  background-color: var(--primary);
-  transition: var(--transition);
+  background-color: rgb(var(--primary));
+  transition: var(--transition-fast);
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .links-container {
     position: fixed;
     top: 0.5rem;
@@ -182,9 +195,9 @@ nav {
     min-height: calc(100% - 2 * 1rem);
     padding: 4rem 1rem 1rem 1rem;
     border-radius: 0.5rem;
-    background-color: var(--primary);
+    background-color: rgb(var(--primary));
     opacity: 0;
-    transition: opacity var(--transition);
+    transition: opacity var(--transition-fast);
   }
 
   #menu-toggle:checked ~ .links-container {
@@ -195,13 +208,13 @@ nav {
   .nav-link {
     width: 100%;
     height: 4rem;
-    color: var(--background);
+    color: rgb(var(--background));
   }
 
   #contact-btn {
     margin-top: auto;
-    background-color: var(--background);
-    color: var(--text);
+    background-color: rgb(var(--background));
+    color: rgb(var(--text));
   }
 }
 
@@ -213,7 +226,7 @@ nav {
 }
 
 #menu-close svg {
-  fill: var(--background);
+  fill: rgb(var(--background));
 }
 
 #menu-overlay {
@@ -225,7 +238,7 @@ nav {
   height: 100vh;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   #menu-btn,
   #menu-close {
     display: flex;
@@ -245,8 +258,8 @@ nav {
     width: 2rem;
     height: 0.1875rem;
     border-radius: 0.1875rem;
-    background-color: var(--text);
-    transition: var(--transition);
+    background-color: rgb(var(--text));
+    transition: var(--transition-fast);
   }
 
   #menu-btn span:nth-child(1) {
@@ -262,7 +275,7 @@ nav {
   }
 
   #menu-toggle:checked ~ #menu-btn span {
-    background-color: var(--background);
+    background-color: rgb(var(--background));
   }
 
   #menu-toggle:checked ~ #menu-btn span:nth-child(1) {
@@ -305,7 +318,7 @@ nav {
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--primary));
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--primary)));
   filter: blur(calc(var(--size) / 2));
 }
 
@@ -353,7 +366,7 @@ nav {
   display: block;
   width: 0;
   min-height: var(--font-size);
-  border-right: 0.25rem solid var(--text);
+  border-right: 0.25rem solid rgb(var(--text));
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
   font-size: var(--font-size);
   white-space: nowrap;
@@ -371,6 +384,12 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;
+  transition: var(--transition-slow);
+}
+
+#scroll-indicator.scrolled {
+  opacity: 0;
+  pointer-events: none;
 }
 
 @keyframes cursor {
@@ -403,5 +422,40 @@ nav {
 @keyframes swap {
   100% {
     top: calc(-2 * var(--num-words) * var(--font-size));
+  }
+}
+
+/**************** About Section ****************/
+
+#about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(var(--background));
+}
+
+#who-am-i {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 40%;
+}
+
+#who-am-i p a {
+  color: rgb(var(--primary));
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 992px) {
+  #about {
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+
+  #who-am-i {
+    align-items: center;
+    max-width: none;
   }
 }

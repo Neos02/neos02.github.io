@@ -45,10 +45,3 @@ function shortenName(media) {
     name.innerText = DEFAULT_NAME;
   }
 }
-
-const media448 = window.matchMedia("(max-width: 448px)");
-
-media448.onchange = shortenName;
-
-shortenName(media448);
-hackerText(document.getElementById("name"));

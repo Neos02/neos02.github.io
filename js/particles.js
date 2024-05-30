@@ -115,5 +115,3 @@ function createParticleEventListeners(className) {
     };
   }
 }
-
-createParticleEventListeners("particle-btn");
