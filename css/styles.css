@@ -92,7 +92,7 @@ section {
   position: relative;
   width: 100vw;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: var(--page-padding);
 }
 
@@ -131,6 +131,7 @@ section {
   filter: blur(1px);
   border-radius: 50%;
   background-color: rgb(var(--text));
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
   pointer-events: none;
 }
 
@@ -150,6 +151,10 @@ nav {
 
 nav.scrolled {
   background-color: rgba(var(--background));
+}
+
+#name {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
 }
 
 .links-container {
