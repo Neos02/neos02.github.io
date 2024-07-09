@@ -41,6 +41,8 @@
 html {
   font-size: 100%;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--primary)) transparent;
 }
 
 body {
@@ -54,28 +56,39 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5 {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 700;
+  display: block;
 }
 
-h1 {
+h1,
+.heading-1 {
   font-size: 4.21rem;
 }
 
-h2 {
+h2,
+.heading-2 {
   font-size: 3.158rem;
 }
 
-h3 {
+h3,
+.heading-3 {
   font-size: 2.369rem;
 }
 
-h4 {
+h4,
+.heading-4 {
   font-size: 1.777rem;
 }
 
-h5 {
+h5,
+.heading-5 {
   font-size: 1.333rem;
 }
 
@@ -86,6 +99,26 @@ p {
 a {
   color: rgb(var(--text));
   text-decoration: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  height: 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  background-color: rgba(var(--secondary), 0.1);
+  color: rgb(var(--text));
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  scrollbar-width: thin;
+}
+
+textarea {
+  height: auto;
+  resize: none;
 }
 
 section {
@@ -119,6 +152,7 @@ section {
   justify-content: center;
   align-items: center;
   padding: 0.5rem 2rem;
+  border: none;
   border-radius: 0.5rem;
   background-color: rgb(var(--primary));
   color: rgb(var(--background));
@@ -636,5 +670,56 @@ nav.scrolled {
 
   .project-card h2 {
     font-size: 2.369rem;
+  }
+}
+
+/**************** Contact Section ****************/
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: var(--page-padding);
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 40%;
+  min-width: 30rem;
+  max-width: 45rem;
+}
+
+#contact form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#contact form > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  #contact form {
+    width: 100%;
+    min-width: auto;
+  }
+
+  #contact form > div > div {
+    flex-direction: column;
+    gap: 2rem;
   }
 }

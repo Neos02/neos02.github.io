@@ -1,4 +1,7 @@
-window.addEventListener("scroll", () => {
+window.addEventListener("load", updateScrollItems);
+window.addEventListener("scroll", updateScrollItems);
+
+function updateScrollItems() {
   const scrollUpdateItems = [
     ...document.getElementsByTagName("nav"),
     document.getElementById("scroll-indicator"),
@@ -11,7 +14,7 @@ window.addEventListener("scroll", () => {
       item.classList.remove("scrolled");
     }
   });
-});
+}
 
 createParticleEventListeners("particle-btn");
 
