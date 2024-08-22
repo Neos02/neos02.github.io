@@ -43,7 +43,7 @@ contactForm.addEventListener("submit", (e) => {
 
 function updateScrollItems() {
   const scrollUpdateItems = [
-    ...document.getElementsByTagName("nav"),
+    ...document.getElementsByTagName("header"),
     document.getElementById("scroll-indicator"),
   ];
 

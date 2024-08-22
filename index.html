@@ -11,17 +11,17 @@
       name="google-site-verification"
       content="J5RQkZTYrpTZ2lPPRzZoGfWz2Pre2UIQsUY79d0fNqw"
     />
-    <title>Nicholas Kennedy</title>
+    <title>Nicholas Kennedy | Software Developer</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-    <link
-      href="./images/favicon-light.ico"
-      rel="icon"
-      media="(prefers-color-scheme: light)"
-    />
     <link
       href="./images/favicon-dark.ico"
       rel="icon"
       media="(prefers-color-scheme: dark)"
+    />
+    <link
+      href="./images/favicon-light.ico"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
     />
 
     <link
@@ -35,7 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
   </head>
   <body>
-    <nav>
+    <header>
       <a href="#hero">
         <h3
           id="name"
@@ -56,18 +56,15 @@
 
       <label id="menu-overlay" for="menu-toggle"></label>
 
-      <div class="links-container">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="./Resume.pdf" target="_blank">Résumé</a>
-        <a
-          id="contact-btn"
-          class="btn-primary particle-btn nav-link"
-          href="#contact"
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="./Resume.pdf" target="_blank">Résumé</a>
+        <a id="contact-btn" class="btn-primary particle-btn" href="#contact"
           >Contact</a
         >
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     <section id="hero">
       <div id="hero-glow"></div>
@@ -83,8 +80,8 @@
       </a>
     </section>
 
-    <section id="about">
-      <div id="who-am-i" tabindex="0">
+    <main id="about">
+      <article id="who-am-i" tabindex="0">
         <h2>Who Am I?</h2>
 
         <p>
@@ -104,9 +101,9 @@
         </p>
 
         <a class="btn-primary particle-btn" href="#contact">Contact</a>
-      </div>
+      </article>
 
-      <div id="skills-container">
+      <figure id="skills-container">
         <div>
           <span class="skill skill-secondary">NextJS</span>
           <span class="skill">UE4</span>
@@ -136,14 +133,14 @@
           <span class="skill">Figma</span>
           <span class="skill skill-secondary">Spring</span>
         </div>
-      </div>
-    </section>
+      </figure>
+    </main>
 
     <section id="projects">
       <h1 class="heading-underline">My Work</h1>
 
       <div class="project-list" tabindex="0">
-        <div class="project-card" tabindex="0">
+        <article class="project-card" tabindex="0">
           <img src="./images/scrap.webp" alt="Scrap" />
           <div class="project-blur-overlay"></div>
           <h1>Scrap</h1>
@@ -165,9 +162,9 @@
               >View Repo</a
             >
           </div>
-        </div>
+        </article>
 
-        <div class="project-card" tabindex="0">
+        <article class="project-card" tabindex="0">
           <img src="./images/brite.webp" alt="Brite" />
           <div class="project-blur-overlay"></div>
           <h1>Brite</h1>
@@ -189,9 +186,9 @@
               >View Landing Page</a
             >
           </div>
-        </div>
+        </article>
 
-        <div class="project-card" tabindex="0">
+        <article class="project-card" tabindex="0">
           <img src="./images/musikalis.webp" alt="Musikalis" />
           <div class="project-blur-overlay"></div>
           <h1>Musikalis</h1>
@@ -212,7 +209,7 @@
               >View Repo</a
             >
           </div>
-        </div>
+        </article>
       </div>
 
       <a

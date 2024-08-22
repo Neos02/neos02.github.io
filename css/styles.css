@@ -133,7 +133,8 @@ textarea {
   resize: none;
 }
 
-section {
+section,
+main {
   position: relative;
   width: 100vw;
   max-width: 100%;
@@ -208,7 +209,7 @@ section {
 
 /**************** Navbar ****************/
 
-nav {
+header {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -220,7 +221,7 @@ nav {
   transition: var(--transition-slow);
 }
 
-nav.scrolled {
+header.scrolled {
   background-color: rgba(var(--background));
 }
 
@@ -228,21 +229,21 @@ nav.scrolled {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); /* Prevents pixels from being left behind during animation */
 }
 
-.links-container {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
 }
 
-.nav-link {
+nav a {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav-link::after {
+nav a::after {
   --height: 0.125rem;
 
   content: "";
@@ -255,12 +256,12 @@ nav.scrolled {
   transition: var(--transition-fast);
 }
 
-.nav-link:hover::after {
+nav a:hover::after {
   width: 100%;
 }
 
 @media only screen and (max-width: 992px) {
-  .links-container {
+  nav {
     position: fixed;
     top: 0.5rem;
     right: -100%;
@@ -276,12 +277,12 @@ nav.scrolled {
     transition: opacity var(--transition-fast);
   }
 
-  #menu-toggle:checked ~ .links-container {
+  #menu-toggle:checked ~ nav {
     right: 1rem;
     opacity: 1;
   }
 
-  .nav-link {
+  nav a {
     width: 100%;
     height: 4rem;
     color: rgb(var(--background));
