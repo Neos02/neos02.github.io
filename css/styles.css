@@ -777,6 +777,10 @@ nav a:hover::after {
 }
 
 @media only screen and (max-width: 600px) {
+  .contact-container {
+    width: 100%;
+  }
+
   #contact form {
     width: 100%;
     min-width: auto;
