@@ -5,7 +5,9 @@ const formResult = document.getElementById("formResult");
 window.addEventListener("load", updateScrollItems);
 window.addEventListener("scroll", updateScrollItems);
 
-function submitContact() {
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   const formData = new FormData(contactForm);
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
@@ -37,7 +39,7 @@ function submitContact() {
     .then(function () {
       contactForm.reset();
     });
-}
+});
 
 function updateScrollItems() {
   const scrollUpdateItems = [

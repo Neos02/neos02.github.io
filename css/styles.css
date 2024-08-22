@@ -623,6 +623,12 @@ nav.scrolled {
   overflow: hidden;
 }
 
+.project-card img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
 .project-blur-overlay {
   position: absolute;
   top: 0;
