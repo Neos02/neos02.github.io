@@ -29,8 +29,6 @@
     />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-
-    <script src="https://web3forms.com/client/script.js" async defer></script>
   </head>
   <body>
     <nav>
@@ -225,15 +223,11 @@
       <h1 class="heading-underline">Contact</h1>
 
       <div class="contact-container">
-        <form
-          id="contactForm"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-        >
+        <form id="contactForm" method="POST">
           <input
             type="hidden"
             name="access_key"
-            value="cf696f50-5fc0-4ddb-9718-3584c26475c1"
+            value="5f95f60a-157c-4435-9a72-2aae2f0efad9"
           />
 
           <input
@@ -250,15 +244,33 @@
             <div class="heading-4">Name</div>
 
             <div>
-              <input name="name" type="text" placeholder="First" required />
-              <input name="lname" type="text" placeholder="Last" required />
+              <input
+                name="name"
+                type="text"
+                placeholder="First"
+                autocomplete="given-name"
+                required
+              />
+              <input
+                name="lname"
+                type="text"
+                placeholder="Last"
+                autocomplete="family-name"
+                required
+              />
             </div>
           </div>
 
           <div>
             <div class="heading-4">Email</div>
 
-            <input name="email" type="email" placeholder="Email" required />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              autocomplete="email"
+              required
+            />
           </div>
 
           <div>
@@ -272,13 +284,7 @@
             ></textarea>
           </div>
 
-          <button
-            class="btn-primary particle-btn h-captcha"
-            data-captcha="true"
-            data-callback="submitContact"
-          >
-            Send
-          </button>
+          <button class="btn-primary particle-btn">Send</button>
         </form>
 
         <div class="hidden" id="formLoading">
